@@ -1,0 +1,138 @@
+<!-- Floating Hearts -->
+<!-- <div class="hearts"> -->
+    <!-- Modifyed div -->
+     <div class="hearts" [class.burst]="heartsBurst">
+  <span
+    class="heart"
+    *ngFor="let h of hearts"
+    [ngStyle]="getRandomStyle()">
+    {{ getRandomHeart() }}
+  </span>
+
+    <span
+    class="heart extra"
+    *ngFor="let h of extraHearts"
+    [ngStyle]="getRandomStyle()">
+    {{ getRandomHeart() }}
+  </span>
+
+</div>
+
+<!-- CONFETTI -->
+<div class="confetti" *ngIf="heartsBurst">
+  <span
+    *ngFor="let c of confetti"
+    [ngStyle]="{
+      left: Math.random() * 100 + 'vw',
+      animationDelay: Math.random() + 's'
+    }">
+  </span>
+</div>
+
+<!-- Card -->       
+<div class="page">
+  <div class="card" *ngIf="!showYay">
+
+    <img
+  src="teddy1.jpg"
+  alt="Teddy"
+  class="teddy-img"
+/>
+    <h2 id="who">{{ valentineName + "," }}</h2>
+
+    
+    <h1 class="typewriter">
+  {{ typedText }}
+</h1>
+    
+    <br><br>
+
+     <p class="sub">Choose wisely 😜</p>
+    <!-- <p id="whoself">~ {{ selfName }}</p> -->
+<div class="buttons">
+  <button class="yes" (click)="sayYes()">YES 💕</button>
+
+  <button
+    class="no"
+    #noBtn
+    [ngStyle]="noBtnStyle"
+    (mouseenter)="moveNo()"
+    (click)="moveNo(); changeNoText(noBtn)">
+    NO
+  </button>
+</div>
+
+  </div>
+
+  <!-- Yay Screen -->
+  <div class="yay" *ngIf="showYay">
+  <h1>Yaaay!! 💖🎉</h1>
+    <p class="special-text">
+  <b>Warning ⚠️</b><br>
+  Unlimited love & care activated for you 💞
+</p>
+<br>
+
+    
+  <!-- Romantic Image -->
+  <img
+    src="Rishi.jpg"
+    alt="Love Image"
+    class="love-img"
+    (click)="revealNumber()"
+  />
+
+    <p class="romantic-text">
+    From this moment, every heartbeat is just for you 💕<br />
+    Forever starts now ❤️
+  </p>
+
+
+
+  <div class="secret-locker">
+  <div class="locker-door">
+    🔐 
+  </div>
+  <!-- 👉 RIGHT SIDE CLICK IMAGE -->
+  
+    
+
+  <div class="locker-content">
+
+ 
+
+    <!-- 💕 THIS TEXT STAYS ALWAYS -->
+    <p class="locker-text">
+      If you truly accept this 💖<br />
+      I would be honored if you message me on WhatsApp
+    </p>
+
+       <!-- 🔒 Instruction text (shown initially) -->
+    <p class="locker-hint" *ngIf="!showWhatsAppNumber">
+      If you want the number, click the baby image & see again
+    </p>
+
+    <!-- 📱 NUMBER (hidden → shown after image click) -->
+    <p class="locker-number" *ngIf="showWhatsAppNumber">
+      <!-- <a
+        href="https://wa.me/919361061938"
+        target="_blank"
+      >
+        9361061938
+      </a> -->
+      9361064938
+    </p>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<!-- <audio #bgMusic loop>
+  <source src="Avalukena.mp3" type="audio/mpeg" />
+</audio> -->
+
+<!-- <button class="yes" (click)="sayYes($event)">YES 💕</button> -->
+

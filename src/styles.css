@@ -1,0 +1,124 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'Poppins', sans-serif; */
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #ff758c, #ff7eb3); */
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.valentine-container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+/* .valentine-container h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff4d6d;
+  margin-bottom: 15px;
+} */
+
+.valentine-container p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* YES button */
+.btn-yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.btn-yes:hover {
+  background: #e63956;
+  transform: scale(1.08);
+}
+
+/* NO button */
+.btn-no {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.btn-no:hover {
+  background: #ddd;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .valentine-container {
+    padding: 30px 20px;
+  }
+
+  .valentine-container h1 {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
